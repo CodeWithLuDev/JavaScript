@@ -1,0 +1,77 @@
+Gestión de memoria en JavaScript
+La gestión de memoria es el proceso mediante el cual un programa reserva, utiliza y libera memoria para garantizar un uso eficiente de los recursos del sistema. En JavaScript, esta tarea se maneja automáticamente a través del recolector de basura (Garbage Collector).
+
+Ciclo de vida de la memoria
+El ciclo de vida de la memoria en JavaScript consta de tres etapas:
+1. Reservar memoria
+Cuando creamos variables, objetos o funciones, el motor de JavaScript reserva memoria para ellos.
+
+let nombre = "Juan"; // Reserva memoria para un string
+let persona = { edad: 30 }; // Reserva memoria para un objeto
+
+2. Utilizar memoria
+La memoria reservada se usa para ejecutar operaciones en los datos almacenados.
+
+console.log(nombre); // Accede a la memoria donde se guarda "Juan"
+persona.edad += 1; // Modifica el valor almacenado en el objeto
+
+3. Liberar memoria
+Cuando los datos ya no son accesibles, el recolector de basura elimina esa memoria automáticamente.
+
+
+Garbage Collection (Recolector de basura)
+El recolector de basura en JavaScript utiliza el algoritmo de alcance (reachability) para identificar qué datos todavía son accesibles y cuáles no.
+
+¿Cómo funciona el algoritmo de alcance?
+Los objetos que pueden ser alcanzados desde el "root" (el objeto global, como window en navegadores o global en Node.js) se consideran accesibles y no se eliminan.
+Los datos que no tienen referencias activas se eliminan.
+
+Ejemplo:
+let objeto = { nombre: "Ana" }; // El objeto está referenciado
+objeto = null; // Ya no hay referencia al objeto
+// El recolector de basura libera la memoria del objeto
+
+
+Memoria y cierres (closures)
+Los cierres pueden retener variables en memoria si no se manejan adecuadamente, causando fugas de memoria (memory leaks).
+
+Ejemplo de un cierre que causa fuga de memoria:
+function crearCierre() {
+    const datos = new Array(1000000).fill("dato");
+    return () => console.log(datos);
+}
+
+const cierre = crearCierre(); // `datos` sigue en memoria aunque no sea necesario
+
+Para evitar esto, podemos limpiar las referencias cuando ya no sean necesarias.
+
+
+Buenas prácticas para la gestión de memoria
+1 - Eliminar referencias no utilizadas Cuando ya no necesitas un objeto o variable, asegúrate de que no quede referenciado.
+
+let usuario = { nombre: "Carlos" };
+usuario = null; // Permite que el recolector de basura lo elimine
+
+2 - Evitar variables globales Las variables globales permanecen en memoria durante toda la ejecución de la aplicación.
+
+// Mejor:
+function ejecutar() {
+    let temporal = "dato temporal"; // Solo vive dentro de la función
+}
+
+3 - Cuidado con los listeners de eventos Si no se eliminan, pueden causar fugas de memoria.
+
+let boton = document.querySelector("button");
+const manejarClick = () => console.log("Click!");
+boton.addEventListener("click", manejarClick);
+
+// Cuando ya no necesitas el listener:
+boton.removeEventListener("click", manejarClick);
+
+4 - Utiliza estructuras de datos adecuadas Usa WeakMap o WeakSet para manejar referencias débiles, que no previenen la recolección de basura.
+
+
+
+Ejercicio práctico
+Crea un objeto con propiedades y luego elimina todas las referencias a él.
+Prueba usar un WeakMap para asociar datos a un objeto, y observa cómo no previene que el objeto se elimine de la memoria.

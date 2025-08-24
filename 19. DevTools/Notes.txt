@@ -1,0 +1,81 @@
+Uso de las herramientas para desarrolladores del navegador
+Las herramientas para desarrolladores (DevTools) son un conjunto de herramientas integradas en los navegadores que permiten depurar, analizar y optimizar tu código. Aquí repasamos cómo utilizarlas.
+
+1. Depuración de problemas
+La pestaña "Console" es la principal herramienta para detectar errores y probar código.
+
+Pasos básicos:
+Abre DevTools (F12 o clic derecho → Inspeccionar).
+Ve a la pestaña "Console".
+Observa errores o advertencias que aparecen automáticamente.
+Errores (red): problemas como variables no definidas o fallos en el código.
+Advertencias (yellow): indican potenciales riesgos, pero no detienen el programa.
+
+Ejemplo: 
+console.log("Hola, DevTools!"); // Mensaje de depuración
+console.warn("Cuidado, algo no parece correcto."); // Advertencia
+console.error("Esto es un error grave."); // Error
+
+
+2. Depuración de memoria
+¿Qué es?
+Permite analizar cómo tu aplicación utiliza la memoria y detectar fugas de memoria.
+
+Cómo usarlo:
+Abre DevTools y selecciona la pestaña "Memory".
+Toma un snapshot para capturar el estado actual de la memoria.
+Busca objetos que no deberían estar en memoria y verifica referencias no necesarias.
+
+3. Depuración de rendimiento
+La pestaña "Performance" mide el tiempo que toma tu aplicación para ejecutar tareas y renderizar contenido.
+
+Cómo usarlo:
+Abre la pestaña "Performance".
+Presiona "Record" y realiza interacciones en tu aplicación.
+Detén el registro y analiza las gráficas para identificar cuellos de botella.
+
+4. Depuración paso a paso
+La pestaña "Sources" permite detener el código en puntos específicos (breakpoints) y analizar su ejecución.
+
+Cómo usarla:
+Abre "Sources".
+Haz clic en el número de línea donde quieres detener el código.
+Refresca la página para activar el breakpoint.
+Usa los botones para avanzar paso a paso o reanudar la ejecución.
+
+Ejemplo: 
+function saludar() {
+    let mensaje = "Hola, mundo!";
+    debugger; // Esto detendrá el código automáticamente.
+    console.log(mensaje);
+}
+saludar();
+
+
+5. Depuración de problemas comunes
+a. Problemas de estilo (CSS)
+Usa la pestaña "Elements":
+
+Inspecciona elementos y edita estilos en tiempo real.
+Detecta estilos heredados o sobrescritos.
+b. Problemas de red (Network)
+Usa la pestaña "Network":
+
+Verifica si las solicitudes al servidor fallaron (404, 500).
+Observa tiempos de carga para optimizar peticiones.
+
+
+6. Herramientas adicionales
+a. Lighthouse
+Automatiza auditorías de rendimiento, accesibilidad y mejores prácticas.
+
+Ve a la pestaña "Lighthouse".
+Genera un reporte y sigue las sugerencias.
+b. Captura de pila (stack trace)
+Cuando ocurre un error, puedes observar la pila de llamadas en "Console", lo que muestra qué funciones llevaron al error.
+
+7. Ejercicio práctico
+Abre una página web de tu elección.
+Usa "Elements" para modificar un elemento en vivo (por ejemplo, cambia el color de un texto).
+Genera un breakpoint en "Sources" y verifica cómo avanza el código.
+Revisa las solicitudes de red en "Network" para entender cuánto tiempo toma cargar los recursos.

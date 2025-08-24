@@ -1,0 +1,2 @@
+Asynchronous JavaScript
+JavaScript es single-threaded, lo que significa que ejecuta una tarea a la vez en un solo hilo. Sin embargo, puede manejar operaciones asíncronas (como esperar una respuesta de un servidor o temporizadores) gracias a su modelo de Event Loop.

@@ -1,0 +1,6 @@
+Módulos en JavaScript
+Un módulo es simplemente un archivo que contiene código JavaScript. Los módulos nos permiten dividir nuestra aplicación en partes reutilizables y manejables, facilitando el mantenimiento y la organización del código.
+
+Ejercicio práctico
+Crea un módulo llamado operaciones.js que tenga funciones para sumar, restar, multiplicar y dividir.
+Importa esas funciones en otro archivo y úsalas.

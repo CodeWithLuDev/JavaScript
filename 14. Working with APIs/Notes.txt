@@ -1,0 +1,27 @@
+Working with APIs
+Una API (Application Programming Interface) es un intermediario que permite que dos aplicaciones se comuniquen entre sí. En JavaScript, puedes usar las APIs para obtener o enviar datos a servidores externos.
+
+Conceptos clave al trabajar con APIs
+Status Codes (Códigos de estado):
+
+200: OK (éxito).
+404: Not Found (no se encontró el recurso).
+500: Internal Server Error (error del servidor).
+Headers (Encabezados):
+
+Información adicional enviada con la solicitud o respuesta.
+Ejemplo: Content-Type: application/json.
+Métodos HTTP:
+
+GET: Obtener datos.
+POST: Enviar datos.
+PUT: Actualizar datos.
+DELETE: Eliminar datos.
+JSON (JavaScript Object Notation):
+
+Formato ligero para enviar y recibir datos.
+Ejemplo de JSON:
+{
+    "nombre": "Juan",
+    "edad": 30
+}

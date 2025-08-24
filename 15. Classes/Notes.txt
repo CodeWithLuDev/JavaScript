@@ -1,0 +1,16 @@
+Clases en JavaScript
+Una clase es una plantilla para crear objetos. Las clases encapsulan datos (propiedades) y métodos que operan sobre esos datos. En JavaScript, son una forma más moderna y clara de trabajar con objetos y herencia, introducida en ES6.
+
+Conceptos importantes para repasar:
+Constructor: Método especial que se llama al crear una instancia de la clase.
+this: Referencia al objeto actual.
+Instancia: Objeto creado a partir de una clase.
+Herencia: Clases hijas pueden reutilizar propiedades y métodos de clases padres.
+Encapsulación: Control de acceso a propiedades/métodos con getters y setters.
+
+Ejercicio práctico
+Crea una clase llamada Rectangulo con las siguientes propiedades y métodos:
+
+Propiedades: ancho, alto.
+Método: calcularArea() que devuelve el área del rectángulo.
+Usa get y set para asegurarte de que ancho y alto sean positivos.
